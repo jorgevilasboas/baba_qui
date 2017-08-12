@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header">Alterar <%= event.player %></div>
+    <form class="ui form" action="/events/<%= event._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="event[player]" value="<%= event.player %>">
+        </div>
+        <div class="field">
+            <label>Habilidade</label>
+            <input type="text" name="event[skill]" value="<%= event.skill %>">
+        </div>
+        <% var goleiro = ""; %>
+        <% if(event.goalkeeper == "1") { %>
+        <% goleiro = "checked" %>
+        <% } %>
+        <div class="Goleiro">
+            <label>Goleiro</label>
+            <input type="checkbox" name="event[goalkeeper]" value="true" <%=goleiro%> ><br>
+        </div>
+        
+        <button class="ui violet basic button"> Salvar</button>
+    </form>
+    <form class="ui form" action="/events/<%= event._id %>?_method=DELETE" method="POST">
+        <button class="ui violet basic button"> APAGAR</button>
+    </form>
+</div>
+<% include ./partials/footer %>

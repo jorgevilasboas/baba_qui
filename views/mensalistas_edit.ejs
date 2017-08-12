@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header">Alterar <%= player.name %></div>
+    <form class="ui form" action="/mensalistas/<%= player._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="player[name]" value="<%= player.name %>">
+        </div>
+        <div class="field">
+            <label>Habilidade</label>
+            <input type="text" name="player[skill]" value="<%= player.skill %>">
+        </div>
+        <% var goleiro = ""; %>
+        <% if(player.goalkeeper == "1") { %>
+        <% goleiro = "checked" %>
+        <% } %>
+        <div class="Goleiro">
+            <label>Goleiro</label>
+            <input type="checkbox" name="player[goalkeeper]" value="true" <%=goleiro%> ><br>
+        </div>
+        
+        <button class="ui violet basic button"> Salvar</button>
+    </form>
+    <form class="ui form" action="/mensalistas/<%= player._id %>?_method=DELETE" method="POST">
+        <button class="ui violet basic button"> APAGAR</button>
+    </form>
+</div>
+<% include ./partials/footer %>

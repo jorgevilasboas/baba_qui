@@ -1,0 +1,58 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <div align="center">
+                <h2> <i class="em em-soccer"></i> Mensalistas <i class="em em-soccer"></i> </h2>
+                <br>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-striped">
+                    <!--
+        			<thead>	
+        				<tr>
+        				    <th>Nr.</th>
+        					<th>Nome</th>
+        					<th>Habilidade</th>
+        					<th>Goleiro</th>
+        					<th>Telefone</th>
+        				</tr>
+        			</thead>
+        			-->
+        			<tbody>
+        			    <% var myNumber = 0; %>
+                        <% mensalistas.forEach(function(mensalista){ %>
+                            <tr>
+                            <% myNumber++; %>
+                            <% var formattedNumber = ("0" + myNumber).slice(-2); %>
+                            
+                                <td><%= formattedNumber  %></td>
+                                <td>
+                                    <% if ( mensalista.goalkeeper == "1") { %>
+                				        <i class="em em-hand"></i>
+                				    <% } %>
+                                </td>
+                                <td><%= mensalista.name  %></td>
+                                <td> <div id="<%=formattedNumber%>" class="ui star rating" data-rating="<%= mensalista.skill %>" data-max-rating="5"></div></td>
+                                <td><%= mensalista.phone  %></td>
+                                <td><a href="/mensalistas/<%=mensalista._id%>/edit"><i class="em em-pencil"></a></i></td>
+                                <!-- <td><a href="/mensalistas/<%=mensalista._id%>/edit"><i class="em em-no_entry"></a></i></td> -->
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container" align="center">
+                <div class="row center">
+                    <a class="btn btn-primary btn-lg" href="/mensalistas/new">Adicionar Mensalista</a>
+                    <a class="btn btn-primary btn-lg" href="/gerarlista">Gerar Lista do dia</a>
+                </div>
+                <div class="row"><br></div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<% include partials/footer %>

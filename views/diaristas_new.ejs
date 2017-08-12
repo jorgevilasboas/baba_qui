@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gerenciador de Baba</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link  rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+        <script type="text/javascript">
+            $('.rating').rating('disable', {initialRating: 1, maxRating: 5});
+            $(document).ready(function(){$(".rating").rating();});
+        </script>
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li><img width="50" src="http://site.pelgranepress.com//nas/content/live/pelgranepress/wp-content/uploads/2016/10/Men-in-black.png"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>        
+
+<div class="ui main text container segment">
+    <div class="ui header">Cadastrar Diarista</div>
+    <form class="ui form" action="/diaristas" method="POST">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="event[player]" placeholder="Nome">
+        </div>
+        <div class="field">
+            <label>Habilidade</label>
+            <input type="text" name="event[skill]" placeholder="Habilidade 1-5">
+        </div>
+        <div class="Goleiro">
+            <label>Goleiro</label>
+            <input type="checkbox" name="event[goalkeeper]" value="true"><br>
+        </div>
+        <input class="ui violet basic button" type="submit" value="Cadastrar">
+    </form>
+</div>
+
+        <div class="container" style="background-color:black;">
+            <div class="row">
+                <p align="right"><img width="50" src="http://site.pelgranepress.com//nas/content/live/pelgranepress/wp-content/uploads/2016/10/Men-in-black.png"></p>
+            </div>
+        </div>
+    </body>
+</html>

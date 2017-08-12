@@ -1,0 +1,20 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui header">Cadastrar Diarista</div>
+    <form class="ui form" action="/events" method="POST">
+        <div class="field">
+            <label>Nome</label>
+            <input type="text" name="event[player]" placeholder="Nome">
+        </div>
+        <div class="field">
+            <label>Habilidade</label>
+            <input type="text" name="event[skill]" placeholder="Habilidade">
+        </div>
+        <div class="Goleiro">
+            <label>Goleiro</label>
+            <input type="checkbox" name="event[goalkeeper]" value="true"><br>
+        </div>
+        <input class="ui violet basic button" type="submit" value="Cadastrar">
+    </form>
+</div>
+<% include ./partials/footer %>
