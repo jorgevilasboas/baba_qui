@@ -467,6 +467,6 @@ app.get("*", function(req, res) {
     res.send("Oops, pagina nao encontrada!");
 });
 
-app.listen(3000, 'localhost', function(){
+app.listen(3000, '192.168.25.132', function(){
     console.log("Servidor do Baba foi iniciado!");
 });
